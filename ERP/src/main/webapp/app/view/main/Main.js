@@ -17,7 +17,7 @@ Ext.define('ErpApp.view.main.Main', {
     			xtype: 'button',
     			text: 'xxx님',
     			menu : [{
-    				text: '비밀번호변'
+    				text: '비밀번호변경'
     			}, {
     				text: '로그아웃'
     			}]
@@ -35,7 +35,11 @@ Ext.define('ErpApp.view.main.Main', {
     		xtype: 'treelist',
     		listeners: {
     			selectionchange : function(obj, record) {
-    				console.log(record.get("page"));
+    				var centerPage = obj.up("viewport").down("component[region=center]");
+    				centerPage.removeAll(true);
+    				centerPage.add({
+    					xtype : record.get("page")
+    				})
     			}
     		},
     		store: {
