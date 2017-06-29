@@ -9,8 +9,8 @@ Ext.define('ErpApp.Application', {
     name: 'ErpApp',
 
     stores: [
-        // TODO: add global / shared stores here
-    	
+        // TODO: add global / shared stores here 
+    	//
     ],
 
     launch: function () {
